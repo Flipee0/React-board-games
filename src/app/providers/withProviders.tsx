@@ -6,9 +6,9 @@ import WithLayout from "./withLayout";
 export const WithProviders = ({ children }: { children: React.ReactNode }) => {
   return (
     <WithTheme>
-      <WithLayout>
-        <WithRouter>{children}</WithRouter>
-      </WithLayout>
+      <WithRouter >
+        <WithLayout>{children}</WithLayout>
+      </WithRouter>
     </WithTheme>
   );
 };

@@ -9,12 +9,13 @@ import {
   Dropdown,
   Grid,
   IconButton,
-  Link,
   ListItemDecorator,
   Menu,
   MenuButton,
   MenuItem,
 } from "@mui/joy";
+import { Link } from "react-router-dom";
+import styles from "./Appbar.module.css"
 
 type AppbarProps = {
   colorModeToggleButton?: React.ReactNode;
@@ -24,7 +25,7 @@ export const Appbar = ({ colorModeToggleButton }: AppbarProps) => {
   return (
     <AppbarContainer>
       <Grid xs={4}>
-        <Link href={"/"} underline={"none"} sx={{ color: "text.primary" }}>
+        <Link to={"/"} className={styles.navLink}>
           Board games
         </Link>
       </Grid>
@@ -50,8 +51,8 @@ export const Appbar = ({ colorModeToggleButton }: AppbarProps) => {
             }}
           >
             <Link
-              href={pagePaths.gameConfig + pagePaths.chess}
-              underline={"none"}
+              to={pagePaths.gameConfig + pagePaths.chess}
+              className={styles.navLink}
             >
               <MenuItem orientation="vertical">
                 <ListItemDecorator>
